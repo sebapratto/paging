@@ -1,7 +1,8 @@
-package com.sebapp.challengeteco
+package com.sebapp.challengeteco.presentation.principal
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.sebapp.challengeteco.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
