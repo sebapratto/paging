@@ -1,5 +1,6 @@
 package com.sebapp.challengeteco.ui.principal
 
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,6 +11,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sebapp.challengeteco.R
+import com.sebapp.challengeteco.ui.detail.DetailActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.flow.collectLatest
 
@@ -29,12 +31,6 @@ class MainActivity : AppCompatActivity() {
 
         itemDetail()
 
-    }
-
-    private fun itemDetail() {
-        recyclerViewAdapter.setOnItemClickListener {
-            Toast.makeText(this, "Item seleccionado: $it", Toast.LENGTH_SHORT).show()
-        }
     }
 
     private fun initRecyclerView() {
@@ -57,9 +53,22 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    /** Set window style */
+    private fun itemDetail() {
+        recyclerViewAdapter.setOnItemClickListener { character ->
+            startActivity(Intent(this, DetailActivity::class.java).apply {
+                putExtra("NAME",character.name)
+                putExtra("STATUS",character.status)
+                putExtra("SPECIES",character.species)
+                putExtra("GENDER",character.gender)
+                putExtra("IMAGE",character.image)
+                putExtra("ORIGIN",character.origin.name)
+            })
+        }
+    }
 
     private fun setWindowStyle() {
+
+        supportActionBar?.hide()
 
         val window = window
         window.statusBarColor = Color.TRANSPARENT

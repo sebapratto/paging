@@ -8,9 +8,16 @@ data class RickAndMortyList(
 
 data class CharacterData(
     val name: String?,
+    val status: String?,
     val species: String?,
-    val image: String?
+    val gender: String?,
+    val image: String?,
+    val origin: Origin,
     )
+
+data class Origin(
+    val name: String?
+)
 
 data class Info(
     val count: Int?,

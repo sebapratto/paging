@@ -17,9 +17,9 @@ class RecyclerViewAdapter(
     DiffUtilCallBack()
 ) {
 
-    private var onItemClickListener: ((String) -> Unit)? = null
+    private var onItemClickListener: ((CharacterData) -> Unit)? = null
 
-    fun setOnItemClickListener(listener: (String) -> Unit) {
+    fun setOnItemClickListener(listener: (CharacterData) -> Unit) {
         onItemClickListener = listener
     }
 
@@ -44,7 +44,7 @@ class RecyclerViewAdapter(
             binding.imageView.setOnClickListener {
                 currentItem?.let { item ->
                     onItemClickListener?.let {
-                        it(item.name!!)
+                        it(item)
                     }
                 }
             }
