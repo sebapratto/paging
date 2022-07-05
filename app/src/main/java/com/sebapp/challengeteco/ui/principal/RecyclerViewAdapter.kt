@@ -3,13 +3,12 @@ package com.sebapp.challengeteco.ui.principal
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.sebapp.challengeteco.R
+import com.sebapp.challengeteco.databinding.RecyclerRowBinding
 import com.sebapp.challengeteco.domain.model.CharacterData
 
 
@@ -18,8 +17,13 @@ class RecyclerViewAdapter(
     DiffUtilCallBack()
 ) {
 
-    override fun onBindViewHolder(holder: RecyclerViewAdapter.MyViewHolder, position: Int) {
+    private var onItemClickListener: ((String) -> Unit)? = null
 
+    fun setOnItemClickListener(listener: (String) -> Unit) {
+        onItemClickListener = listener
+    }
+
+    override fun onBindViewHolder(holder: RecyclerViewAdapter.MyViewHolder, position: Int) {
         holder.bind(getItem(position)!!)
     }
 
@@ -31,22 +35,35 @@ class RecyclerViewAdapter(
         return MyViewHolder(inflater)
     }
 
-    class MyViewHolder(view: View): RecyclerView.ViewHolder(view) {
+    inner class MyViewHolder(view: View): RecyclerView.ViewHolder(view) {
 
-        private val imageView: ImageView = view.findViewById(R.id.imageView)
-        private val tvName: TextView = view.findViewById(R.id.tvName)
-        private val tvDesc: TextView = view.findViewById(R.id.tvDesc)
+        private val binding = RecyclerRowBinding.bind(view)
+        private var currentItem: CharacterData? = null
+
+        init {
+            binding.imageView.setOnClickListener {
+                currentItem?.let { item ->
+                    onItemClickListener?.let {
+                        it(item.name!!)
+                    }
+                }
+            }
+        }
 
         fun bind(data: CharacterData) {
-            tvName.text = data.name
-            tvDesc.text = data.species
 
-            Glide.with(imageView)
+            currentItem = data
+
+            binding.tvName.text = data.name
+            binding.tvDesc.text = data.species
+
+            Glide.with(binding.imageView)
                 .load(data.image)
                 .centerCrop()
-                .into(imageView)
+                .into(binding.imageView)
 
         }
+
     }
 
     class DiffUtilCallBack: DiffUtil.ItemCallback<CharacterData>() {

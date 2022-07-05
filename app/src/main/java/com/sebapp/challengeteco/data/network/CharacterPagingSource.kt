@@ -7,7 +7,10 @@ import com.sebapp.challengeteco.data.services.RetroService
 import com.sebapp.challengeteco.domain.model.CharacterData
 
 
-class CharacterPagingSource(val apiService: RetroService): PagingSource<Int, CharacterData>() {
+class CharacterPagingSource(
+    private val apiService: RetroService
+    ): PagingSource<Int, CharacterData>() {
+
     override fun getRefreshKey(state: PagingState<Int, CharacterData>): Int? {
 
         return state.anchorPosition

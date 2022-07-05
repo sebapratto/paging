@@ -4,6 +4,7 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -26,6 +27,14 @@ class MainActivity : AppCompatActivity() {
 
         setWindowStyle()
 
+        itemDetail()
+
+    }
+
+    private fun itemDetail() {
+        recyclerViewAdapter.setOnItemClickListener {
+            Toast.makeText(this, "Item seleccionado: $it", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun initRecyclerView() {
@@ -63,5 +72,7 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
+
 
 }
