@@ -47,15 +47,7 @@ class DetailActivity : AppCompatActivity() {
 
         val window = window
         window.statusBarColor = Color.WHITE
-                supportActionBar?.title = "Challenge Teco 2022"
-//        supportActionBar?.hide()
-//        window.navigationBarColor = Color.TRANSPARENT
-
-        /*if(android.os.Build.VERSION.SDK_INT > 29){
-            window.setDecorFitsSystemWindows(true)
-        }else{
-            window.addFlags(WindowManager.LayoutParams.FIRST_SYSTEM_WINDOW)
-        }*/
+        supportActionBar?.title = "Challenge Teco 2022"
 
     }
 }
