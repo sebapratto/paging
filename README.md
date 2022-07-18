@@ -15,4 +15,5 @@ Rick & Morty Api with Paging and Retrofit
 </h1>
 
 ## Contact
-The Snapchat n
+email: pratto.sebastian.ignacio@gmail
+Misiones Argentina
