@@ -4,14 +4,14 @@ Rick & Morty Api with Paging and Retrofit
 <br>
 </h1>
 
-## Paging
-## Retrofit
-## MVVM
-## Clean
-## Master Detail
+### Paging
+### Retrofit
+### MVVM
+### Clean
+### Master Detail
 
 <h1 align="center">
-  <img src="https://github.com/sebapratto/paging/blob/dev/imageAssets/screen-main.png" width=1370 height=2534/>
+  <img src="https://github.com/sebapratto/paging/tree/master/imageAssets/screen-main.png" width=439 height=812/>
 </h1>
 
 ## Contact
