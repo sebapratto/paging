@@ -47,7 +47,7 @@ class DetailActivity : AppCompatActivity() {
 
         val window = window
         window.statusBarColor = Color.WHITE
-        supportActionBar?.title = "Challenge Teco 2022"
+        supportActionBar?.title = "Rick y Morty App 2022"
 
     }
 }

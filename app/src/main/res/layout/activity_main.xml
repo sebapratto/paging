@@ -16,13 +16,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:layout_width="160dp"
-            android:layout_height="50dp"
+        <TextView
+            android:id="@+id/textView_Welcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
-            android:layout_marginTop="18dp"
-            android:scaleType="centerInside"
-            android:src="@drawable/teco"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/satoshi_bold"
+            android:text="@string/welcome"
+            android:textSize="24sp"
+            android:textColor="@color/blue"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -58,7 +61,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/satoshi_bold"
         android:textAlignment="center"
-        android:text="Challenge Rick y Morty"
+        android:text="@string/title_main"
         android:textSize="24sp"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ChallengeTeco</string>
+    <string name="title_main">Rick y Morty API</string>
+    <string name="welcome">Welcome to my Github</string>
 </resources>
