@@ -11,7 +11,7 @@ Rick & Morty Api with Paging and Retrofit
 ### Master Detail
 
 <h1 align="center">
-  <img src="https://github.com/sebapratto/paging/tree/master/imageAssets/screen-main.png" width=439 height=812/>
+  <img src="https://github.com/sebapratto/paging/tree/master/imageAssets/screen-main.jpg" width=439 height=812/>
 </h1>
 
 ## Contact
